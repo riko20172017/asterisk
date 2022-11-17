@@ -3,16 +3,16 @@
   become: yes
   vars:
 # Используйте это при первом запуске этого скрипта
-    current_mysql_root_password: "YouNeedAReallyGoodPassword"
-    updated_mysql_root_password: "root"
-    current_mysql_asterisk_password: "YouNeedAReallyGoodPasswordHereToo"
-    updated_mysql_asterisk_password: "root"
+    #current_mysql_root_password: "root"
+    #updated_mysql_root_password: "root"
+    #current_mysql_asterisk_password: "root"
+    #updated_mysql_asterisk_password: "root"
 # Закомментируйте вышеизложенное после первого запуска
 # Раскомментируйте строки ниже для последующих запусков этого скрипта
-  # current_mysql_root_password: "YouNeedAReallyGoodPassword"
-  # updated_mysql_root_password: "{{ current_mysql_root_password }}"
-  # current_mysql_asterisk_password: "YouNeedAReallyGoodPasswordHereToo"
-  # updated_mysql_asterisk_password: "{{ current_mysql_asterisk_password }}"
+    current_mysql_root_password: "root"
+    updated_mysql_root_password: "{{ current_mysql_root_password }}"
+    current_mysql_asterisk_password: "root"
+    updated_mysql_asterisk_password: "{{ current_mysql_asterisk_password }}"
   tasks:
   - name: Install epel-release
     dnf:
